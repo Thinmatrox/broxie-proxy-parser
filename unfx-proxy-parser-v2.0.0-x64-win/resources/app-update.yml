@@ -1,0 +1,5 @@
+owner: assnctr
+repo: unfx-proxy-parser
+provider: github
+private: false
+updaterCacheDirName: unfx-proxy-parser-updater

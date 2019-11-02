@@ -1,0 +1,48 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.github.assnctr.unfxproxyparser
+win:
+  target:
+    - target: zip
+      arch:
+        - x64
+        - ia32
+    - target: nsis-web
+      arch:
+        - x64
+        - ia32
+    - target: portable
+      arch:
+        - x64
+        - ia32
+  icon: /public/icons/icon.ico
+  artifactName: '${name}-v${version}-${arch}-${os}.${ext}'
+linux:
+  target:
+    - target: zip
+      arch:
+        - x64
+        - ia32
+        - arm64
+        - armv7l
+  icon: /public/icons/icon.ico
+  artifactName: '${name}-v${version}-${arch}-${os}.${ext}'
+publish:
+  - provider: github
+    owner: assnctr
+    repo: unfx-proxy-parser
+    private: false
+productName: Unfx Proxy Parser
+copyright: 2019 assnctr (openproxy.space)
+extraResources:
+  - filter:
+      - ./files/**
+portable:
+  artifactName: '${name}-v${version}-${arch}-${os}-portable.${ext}'
+nsisWeb:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  differentialPackage: true
+electronVersion: 4.2.12
